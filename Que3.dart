@@ -1,15 +1,21 @@
 import 'dart:io';
-void main(){
-    var array = [1,2,3,4];
-    List myArray = array.toList();
+
+void main() {
+  var array = [1, 2, 3, 4];
+  List myArray = array.toList();
+  int choice;
+
+  do {
     print("Welcome to the Menu-Driven Program of Array Operations ");
     print("Enter 1 to Enter an element in the Array  ");
     print("Enter 2 to Update an element in the Array  ");
     print("Enter 3 to Remove an element in the Array  ");
     print("Enter 4 to View the elements in the Array  ");
+    print("Enter 0 to Exit ");
     stdout.write("Enter Your Choice : ");
-    int choice = int.parse(stdin.readLineSync()!);
-    switch(choice){
+    choice = int.parse(stdin.readLineSync()!);
+
+    switch (choice) {
       case 1:
         stdout.write("Enter the Element you want to add in your Array : ");
         int addVar = int.parse(stdin.readLineSync()!);
@@ -37,7 +43,11 @@ void main(){
           stdout.write("$element  ");
         });
         break;
+      case 0:
+        print("Exiting...");
+        break;
       default:
         print("Invalid Choice!!");
     }
+  } while (choice != 0);
 }
