@@ -1,6 +1,5 @@
 import 'dart:io';
 void main() {
-  while (true) {
     var array1 = [
       [1, 2, 3],
       [4, 5, 6],
@@ -80,4 +79,3 @@ void main() {
         print("Invalid Choice Input!!");
     }
   }
-}
