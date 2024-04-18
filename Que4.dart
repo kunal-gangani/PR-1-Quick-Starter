@@ -1,13 +1,15 @@
 import 'dart:io';
 void main(){
-  var array1 = {[1,2,3],
-  [4,5,6],
-  [7,8,9]};
- var array2 = {[3,2,1],
-  [6,5,4],
-  [9,8,7]};
-  List myArray1 = array1.toList();
-  List myArray2 = array2.toList();
+  List<List<int>> myArray1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
+    List<List<int>> myArray2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1],
+  ];
   print("Array 1 : ");
   myArray1.forEach((element) {
     stdout.write("$element ");
@@ -19,9 +21,11 @@ void main(){
     print("");
   });
   print("Array 1 + Array 2 :");
-  List sumList = myArray2+myArray1;
-  sumList.forEach((element) {
-    stdout.write("$element");
-    print("");
+  myArray1.forEach((element) {
+    myArray2.forEach((e) {
+      stdout.write("${element + e} ");
+      print("");
+     });
   });
+  
 }
