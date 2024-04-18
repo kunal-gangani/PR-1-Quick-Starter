@@ -4,11 +4,13 @@ void main(){
     List myArray = array.toList();
     stdout.write("How many elements do you want in your Array : ");
     int len = int.parse(stdin.readLineSync()!);
-    for(int i = 1 ; i <= len ; i++){
-      stdout.write("Enter Element $i : ");
+    int i = 1;
+    while(i<=len){
+      stdout.write("Enter element $i value of Array : ");
       int el = int.parse(stdin.readLineSync()!);
       myArray.add(el);
-  }
+      i++;
+    }
     int large = myArray[0];
     myArray.forEach((element) {
       if(element>large){
