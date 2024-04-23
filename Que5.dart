@@ -1,11 +1,16 @@
 import 'dart:io';
 void main() {
-    var array = [
-      [1, 2, 3],
-      [4, 5, 6],
-      [7, 8, 9]
-    ];
-    List<List<int>> myArray = array.map((e) => e.toList()).toList();
+    stdout.write("Enter Row : ");
+  int row = int.parse(stdin.readLineSync()!);
+  print("");
+  stdout.write("Enter Column Number : ");
+  int col = int.parse(stdin.readLineSync()!);
+  List<List<int>> myArray = List.generate(row, (i) {
+    return List.generate(col, (j) {
+      stdout.write("Enter value for element ${[i]} ${[j]}: ");
+      return int.parse(stdin.readLineSync()!);
+    });
+  });
     print("Array : ");
     myArray.forEach((element) {
       stdout.write("$element ");
@@ -47,7 +52,7 @@ void main() {
         for (int j = 0; j < myArray[rowNum - 1].length; j++) {
           rowSum += myArray[rowNum - 1][j];
         }
-        print("The sum of row $rowNum is : $rowSum");
+        print("The Sum of Row $rowNum is : $rowSum");
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         break;
       case 3:
