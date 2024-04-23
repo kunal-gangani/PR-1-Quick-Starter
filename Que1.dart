@@ -1,16 +1,14 @@
 import 'dart:io';
 void main(){
-  var array = [];
-  List myArray = array.toList();
+  List myArray = [];
   stdout.write("How many elements do you want in your Array : ");
   int len = int.parse(stdin.readLineSync()!);
-  int i = 1;
-    while(i<=len){
-      stdout.write("Enter element $i value of Array : ");
+  myArray = List.generate(len, (i) {
+      stdout.write("Enter the value for Element ${i+1} : ");
       int el = int.parse(stdin.readLineSync()!);
       myArray.add(el);
-      i++;
-    }
+      return el;
+    });
   print("Elements in the Array are : ");
   myArray.forEach((element) {
       stdout.write("$element   ");
