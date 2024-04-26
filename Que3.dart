@@ -9,6 +9,7 @@ void main() {
       return el;
     });
   int choice;
+  int i = myArray.length;
   do {
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     print("Welcome to the Menu-Driven Program of Array Operations ");
@@ -25,7 +26,8 @@ void main() {
       case 1:
         stdout.write("Enter the Element you want to add in your Array : ");
         int addVar = int.parse(stdin.readLineSync()!);
-        myArray.add(addVar);
+        myArray.insert(i, addVar);
+        i++;
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         print(myArray);
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
