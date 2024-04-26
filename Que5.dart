@@ -30,15 +30,15 @@ void main() {
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     switch (choice) {
       case 1:
-        int sum = 0;
-        for (int i = 0; i < myArray.length; i++) {
-          for (int j = 0; j < myArray.length; j++) {
-            sum += myArray[i][j];
-          }
-        }
-        print("The SUM of all the elements in the Array are : $sum");
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        break;
+       int sum = 0;
+      myArray.forEach((row) {
+       row.forEach((element) {
+        sum += element;
+        });
+      });
+      print("The SUM of all the elements in the Array are : $sum");
+      print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      break;
       case 2:
         print("The SUM of the ROW from the Array is : ");
         stdout.write("Enter the row number : ");
